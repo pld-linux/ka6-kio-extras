@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.02.2
+%define		kdeappsver	24.05.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kio-extras
 Summary:	kio-extras
 Name:		ka6-%{kaname}
-Version:	24.02.2
+Version:	24.05.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	15ac875b5d9d76dfb6963eff99a73eef
+# Source0-md5:	2aee86bb946a3b1090b0ef20e496b010
 URL:		http://www.kde.org/
 BuildRequires:	OpenEXR-devel >= 3.0.5
 BuildRequires:	Qt6Core-devel >= %{qtver}
@@ -112,8 +112,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/kfileaudiopreview.so
 %attr(755,root,root) %{_prefix}/libexec/kf6/smbnotifier
 %{_datadir}/config.kcfg/jpegcreatorsettings5.kcfg
-%dir %{_datadir}/kio_docfilter
-%{_datadir}/kio_docfilter/kio_docfilter.css
 %dir %{_datadir}/kio_info
 %{_datadir}/kio_info/kde-info2html
 %{_datadir}/kio_info/kde-info2html.conf
