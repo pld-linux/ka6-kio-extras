@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.12.3
+%define		kdeappsver	25.04.0
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kio-extras
 Summary:	kio-extras
 Name:		ka6-%{kaname}
-Version:	24.12.3
+Version:	25.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	f3136cb4160d3912ed496d14a63e9c0e
+# Source0-md5:	66e83d467a5dc20b73af3231108204f9
 URL:		https://www.kde.org/
 BuildRequires:	OpenEXR-devel >= 3.0.5
 BuildRequires:	Qt6Core-devel >= %{qtver}
@@ -97,6 +97,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/filenamesearchmodule.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/smbwatcher.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/wpad-detector.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kfileitemaction/kactivitymanagerd_fileitem_linking_plugin.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/activities.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/archive.so
@@ -105,6 +106,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/info.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/man.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/mtp.so
+%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/nfs.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/recentlyused.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/sftp.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/smb.so
@@ -113,6 +115,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kiod/kmtpd.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kfileaudiopreview.so
 %attr(755,root,root) %{_prefix}/libexec/kf6/smbnotifier
+%attr(755,root,root) %{_prefix}/libexec/wpad-detector-helper
 %{_datadir}/config.kcfg/jpegcreatorsettings5.kcfg
 %dir %{_datadir}/kio_info
 %{_datadir}/kio_info/kde-info2html
