@@ -1,11 +1,13 @@
 #
 # Conditional build:
-%bcond_with	tests		# build with tests
+%bcond_with	tests		# test suite
+
 %define		kdeappsver	25.04.1
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kio-extras
-Summary:	kio-extras
+Summary:	Additional components to increase the functionality of KIO
+Summary(pl.UTF-8):	Dodatkowe komponenty rozszerzające funkcjonalność KIO
 Name:		ka6-%{kaname}
 Version:	25.04.1
 Release:	1
@@ -13,7 +15,7 @@ License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
 # Source0-md5:	dc0c424c60d1185dd59b9015dacf066a
-URL:		https://www.kde.org/
+URL:		https://kde.org/
 BuildRequires:	Imath-devel >= 3.1.12
 BuildRequires:	OpenEXR-devel >= 3.0.5
 BuildRequires:	Qt6Core-devel >= %{qtver}
@@ -48,7 +50,10 @@ Obsoletes:	ka5-%{kaname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-kio-extras.
+Additional components to increase the functionality of KIO.
+
+%description -l pl.UTF-8
+Dodatkowe komponenty rozszerzające funkcjonalność KIO.
 
 %package devel
 Summary:	Header files for %{kaname} development
@@ -73,15 +78,16 @@ Pliki nagłówkowe dla programistów używających %{kaname}.
 	%{!?with_tests:-DBUILD_TESTING=OFF} \
 	-DKDE_INSTALL_DOCBUNDLEDIR=%{_kdedocdir} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON
+
 %ninja_build -C build
 
 %if %{with tests}
 ctest --test-dir build
 %endif
 
-
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %ninja_install -C build
 
 # not supported by glibc yet
@@ -102,6 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
+%doc DESIGN
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/filenamesearchmodule.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/smbwatcher.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/wpad-detector.so
