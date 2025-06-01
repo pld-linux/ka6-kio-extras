@@ -11,7 +11,7 @@ Summary:	Additional components to increase the functionality of KIO
 Summary(pl.UTF-8):	Dodatkowe komponenty rozszerzające funkcjonalność KIO
 Name:		ka6-%{kaname}
 Version:	25.04.1
-Release:	1
+Release:	2
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{ka_ver}/src/%{kaname}-%{version}.tar.xz
@@ -102,7 +102,10 @@ Requires:	libssh >= 0.8.3
 Requires:	libtirpc-devel >= 1.3.3
 Requires:	phonon-qt6 >= 4.6.60
 Requires:	taglib >= 1.11
+Provides:	kf5-kio-apps = %{version}-%{release}
+Obsoletes:	kf5-kio-apps < 6
 Obsoletes:	ka5-kio-extras < 6
+Conflicts:	kf5-kio < 5.116.0-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
