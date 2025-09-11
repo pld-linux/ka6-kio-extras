@@ -10,12 +10,12 @@
 Summary:	Additional components to increase the functionality of KIO
 Summary(pl.UTF-8):	Dodatkowe komponenty rozszerzające funkcjonalność KIO
 Name:		ka6-%{kaname}
-Version:	25.08.0
+Version:	25.08.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{ka_ver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	1d11770bdb9cb4549814c98a10f43f26
+# Source0-md5:	752805d3da9f98f8d1c4418f79f73b99
 URL:		https://kde.org/
 BuildRequires:	Imath-devel >= 3.1.12
 BuildRequires:	OpenEXR-devel >= 3.0.5
@@ -103,6 +103,7 @@ Requires:	libtirpc-devel >= 1.3.3
 Requires:	phonon-qt6 >= 4.6.60
 Requires:	taglib >= 1.11
 Provides:	kf5-kio-apps = %{version}-%{release}
+%requires_eq_to Qt6Core Qt6Core-devel
 Obsoletes:	kf5-kio-apps < 6
 Obsoletes:	ka5-kio-extras < 6
 Conflicts:	kf5-kio < 5.116.0-2
