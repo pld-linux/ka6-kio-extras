@@ -11,7 +11,7 @@ Summary:	Additional components to increase the functionality of KIO
 Summary(pl.UTF-8):	Dodatkowe komponenty rozszerzające funkcjonalność KIO
 Name:		ka6-%{kaname}
 Version:	25.08.2
-Release:	2
+Release:	3
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{ka_ver}/src/%{kaname}-%{version}.tar.xz
@@ -29,8 +29,8 @@ BuildRequires:	Qt6Svg-devel >= %{qt_ver}
 %{?with_tests:BuildRequires:	Qt6Test-devel >= %{qt_ver}}
 BuildRequires:	Qt6Widgets-devel >= %{qt_ver}
 BuildRequires:	cmake >= 3.20
-BuildRequires:	gperf
 BuildRequires:	gettext-tools
+BuildRequires:	gperf
 BuildRequires:	ka6-libkexiv2-devel
 BuildRequires:	kdsoap-qt6-devel >= 2.2.0
 BuildRequires:	kdsoap-ws-discovery-client-qt6-devel >= 0.3.0
@@ -52,14 +52,14 @@ BuildRequires:	kf6-ktextwidgets-devel >= %{kf_ver}
 BuildRequires:	kf6-kwidgetsaddons-devel >= %{kf_ver}
 BuildRequires:	kf6-solid-devel >= %{kf_ver}
 BuildRequires:	kf6-syntax-highlighting-devel >= %{kf_ver}
-BuildRequires:	kp6-plasma-activities-devel
+BuildRequires:	kp6-plasma-activities-devel >= 6.5.0
 BuildRequires:	kp6-plasma-activities-stats-devel
 BuildRequires:	libimobiledevice-devel >= 1.3.0
 BuildRequires:	libmtp-devel >= 1.1.2
 BuildRequires:	libplist-devel >= 2.0
 BuildRequires:	libproxy-devel
-BuildRequires:	libssh-devel >= 0.8.3
 BuildRequires:	libsmbclient-devel
+BuildRequires:	libssh-devel >= 0.8.3
 BuildRequires:	libtirpc-devel >= 1.3.3
 BuildRequires:	ninja
 BuildRequires:	phonon-qt6-devel >= 4.6.60
@@ -104,8 +104,8 @@ Requires:	phonon-qt6 >= 4.6.60
 Requires:	taglib >= 1.11
 Provides:	kf5-kio-apps = %{version}-%{release}
 %requires_eq_to Qt6Core Qt6Core-devel
-Obsoletes:	kf5-kio-apps < 6
 Obsoletes:	ka5-kio-extras < 6
+Obsoletes:	kf5-kio-apps < 6
 Conflicts:	kf5-kio < 5.116.0-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -173,50 +173,50 @@ rm -rf $RPM_BUILD_ROOT
 %doc DESIGN
 %attr(755,root,root) %{_libexecdir}/kf6/smbnotifier
 %attr(755,root,root) %{_libexecdir}/wpad-detector-helper
-%attr(755,root,root) %{_libdir}/libkioarchive6.so.*.*
+%{_libdir}/libkioarchive6.so.*.*
 %ghost %{_libdir}/libkioarchive6.so.6
-%attr(755,root,root) %{_libdir}/qt6/plugins/kcm_trash.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kfileaudiopreview.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/filenamesearchmodule.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/smbwatcher.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kded/wpad-detector.so
+%{_libdir}/qt6/plugins/kcm_trash.so
+%{_libdir}/qt6/plugins/kfileaudiopreview.so
+%{_libdir}/qt6/plugins/kf6/kded/filenamesearchmodule.so
+%{_libdir}/qt6/plugins/kf6/kded/smbwatcher.so
+%{_libdir}/qt6/plugins/kf6/kded/wpad-detector.so
 %dir %{_libdir}/qt6/plugins/kf6/kfileitemaction
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kfileitemaction/forgetfileitemaction.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kfileitemaction/kactivitymanagerd_fileitem_linking_plugin.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/activities.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/afc.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/archive.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/filter.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/fish.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/info.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/man.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/mtp.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/nfs.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/recentlyused.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/sftp.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/smb.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/thumbnail.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kio/kio_filenamesearch.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kiod/kmtpd.so
+%{_libdir}/qt6/plugins/kf6/kfileitemaction/forgetfileitemaction.so
+%{_libdir}/qt6/plugins/kf6/kfileitemaction/kactivitymanagerd_fileitem_linking_plugin.so
+%{_libdir}/qt6/plugins/kf6/kio/activities.so
+%{_libdir}/qt6/plugins/kf6/kio/afc.so
+%{_libdir}/qt6/plugins/kf6/kio/archive.so
+%{_libdir}/qt6/plugins/kf6/kio/filter.so
+%{_libdir}/qt6/plugins/kf6/kio/fish.so
+%{_libdir}/qt6/plugins/kf6/kio/info.so
+%{_libdir}/qt6/plugins/kf6/kio/man.so
+%{_libdir}/qt6/plugins/kf6/kio/mtp.so
+%{_libdir}/qt6/plugins/kf6/kio/nfs.so
+%{_libdir}/qt6/plugins/kf6/kio/recentlyused.so
+%{_libdir}/qt6/plugins/kf6/kio/sftp.so
+%{_libdir}/qt6/plugins/kf6/kio/smb.so
+%{_libdir}/qt6/plugins/kf6/kio/thumbnail.so
+%{_libdir}/qt6/plugins/kf6/kio/kio_filenamesearch.so
+%{_libdir}/qt6/plugins/kf6/kiod/kmtpd.so
 %dir %{_libdir}/qt6/plugins/kf6/thumbcreator
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/thumbcreator/audiothumbnail.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/thumbcreator/comicbookthumbnail.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/thumbcreator/cursorthumbnail.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/thumbcreator/directorythumbnail.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/thumbcreator/djvuthumbnail.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/thumbcreator/ebookthumbnail.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/thumbcreator/exrthumbnail.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/thumbcreator/imagethumbnail.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/thumbcreator/jpegthumbnail.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/thumbcreator/kraorathumbnail.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/thumbcreator/opendocumentthumbnail.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/thumbcreator/svgthumbnail.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/thumbcreator/textthumbnail.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/thumbcreator/windowsexethumbnail.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/thumbcreator/windowsimagethumbnail.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_netpref.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_proxy.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_webshortcuts.so
+%{_libdir}/qt6/plugins/kf6/thumbcreator/audiothumbnail.so
+%{_libdir}/qt6/plugins/kf6/thumbcreator/comicbookthumbnail.so
+%{_libdir}/qt6/plugins/kf6/thumbcreator/cursorthumbnail.so
+%{_libdir}/qt6/plugins/kf6/thumbcreator/directorythumbnail.so
+%{_libdir}/qt6/plugins/kf6/thumbcreator/djvuthumbnail.so
+%{_libdir}/qt6/plugins/kf6/thumbcreator/ebookthumbnail.so
+%{_libdir}/qt6/plugins/kf6/thumbcreator/exrthumbnail.so
+%{_libdir}/qt6/plugins/kf6/thumbcreator/imagethumbnail.so
+%{_libdir}/qt6/plugins/kf6/thumbcreator/jpegthumbnail.so
+%{_libdir}/qt6/plugins/kf6/thumbcreator/kraorathumbnail.so
+%{_libdir}/qt6/plugins/kf6/thumbcreator/opendocumentthumbnail.so
+%{_libdir}/qt6/plugins/kf6/thumbcreator/svgthumbnail.so
+%{_libdir}/qt6/plugins/kf6/thumbcreator/textthumbnail.so
+%{_libdir}/qt6/plugins/kf6/thumbcreator/windowsexethumbnail.so
+%{_libdir}/qt6/plugins/kf6/thumbcreator/windowsimagethumbnail.so
+%{_libdir}/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_netpref.so
+%{_libdir}/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_proxy.so
+%{_libdir}/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_webshortcuts.so
 %{_datadir}/config.kcfg/jpegcreatorsettings5.kcfg
 %{_datadir}/dbus-1/services/org.kde.kmtpd5.service
 %dir %{_datadir}/kio_filenamesearch
