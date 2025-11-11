@@ -94,16 +94,17 @@ Requires:	kf6-knotifications >= %{kf_ver}
 Requires:	kf6-kservice >= %{kf_ver}
 Requires:	kf6-ktextwidgets >= %{kf_ver}
 Requires:	kf6-kwidgetsaddons >= %{kf_ver}
-Requires:	kf6-solid-devel >= %{kf_ver}
+Requires:	kf6-solid >= %{kf_ver}
 Requires:	kf6-syntax-highlighting >= %{kf_ver}
 Requires:	libimobiledevice >= 1.3.0
 Requires:	libmtp >= 1.1.2
 Requires:	libssh >= 0.8.3
-Requires:	libtirpc-devel >= 1.3.3
+Requires:	libtirpc >= 1.3.3
 Requires:	phonon-qt6 >= 4.6.60
 Requires:	taglib >= 1.11
 Provides:	kf5-kio-apps = %{version}-%{release}
 %requires_eq_to Qt6Core Qt6Core-devel
+Suggests:	udev-libmtp
 Obsoletes:	ka5-kio-extras < 6
 Obsoletes:	kf5-kio-apps < 6
 Conflicts:	kf5-kio < 5.116.0-2
