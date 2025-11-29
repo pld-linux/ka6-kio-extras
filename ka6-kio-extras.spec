@@ -11,7 +11,7 @@ Summary:	Additional components to increase the functionality of KIO
 Summary(pl.UTF-8):	Dodatkowe komponenty rozszerzające funkcjonalność KIO
 Name:		ka6-%{kaname}
 Version:	25.08.3
-Release:	2
+Release:	3
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{ka_ver}/src/%{kaname}-%{version}.tar.xz
