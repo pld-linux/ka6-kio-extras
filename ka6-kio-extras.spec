@@ -10,12 +10,12 @@
 Summary:	Additional components to increase the functionality of KIO
 Summary(pl.UTF-8):	Dodatkowe komponenty rozszerzające funkcjonalność KIO
 Name:		ka6-%{kaname}
-Version:	25.08.3
-Release:	3
+Version:	25.12.0
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{ka_ver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	39fb007a63c9e3cb35dedbfb8d31a328
+# Source0-md5:	da1de6279504bcd8b49ec1b82874593d
 URL:		https://kde.org/
 BuildRequires:	Imath-devel >= 3.1.12
 BuildRequires:	OpenEXR-devel >= 3.0.5
@@ -177,7 +177,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libkioarchive6.so.*.*
 %ghost %{_libdir}/libkioarchive6.so.6
 %{_libdir}/qt6/plugins/kcm_trash.so
-%{_libdir}/qt6/plugins/kfileaudiopreview.so
 %{_libdir}/qt6/plugins/kf6/kded/filenamesearchmodule.so
 %{_libdir}/qt6/plugins/kf6/kded/smbwatcher.so
 %{_libdir}/qt6/plugins/kf6/kded/wpad-detector.so
