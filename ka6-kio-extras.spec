@@ -1,4 +1,5 @@
 # TODO: libappimage >= 0.1.10, https://github.com/AppImage/libappimage
+# TODO: detect smbclient
 #
 # Conditional build:
 %bcond_with	tests		# test suite
@@ -10,12 +11,12 @@
 Summary:	Additional components to increase the functionality of KIO
 Summary(pl.UTF-8):	Dodatkowe komponenty rozszerzające funkcjonalność KIO
 Name:		ka6-%{kaname}
-Version:	25.12.0
+Version:	25.12.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{ka_ver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	da1de6279504bcd8b49ec1b82874593d
+# Source0-md5:	c2d9d51cbeca9e642551b373312881ef
 URL:		https://kde.org/
 BuildRequires:	Imath-devel >= 3.1.12
 BuildRequires:	OpenEXR-devel >= 3.0.5
@@ -172,13 +173,13 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
 %doc DESIGN
-%attr(755,root,root) %{_libexecdir}/kf6/smbnotifier
+#%%attr(755,root,root) %{_libexecdir}/kf6/smbnotifier
 %attr(755,root,root) %{_libexecdir}/wpad-detector-helper
 %{_libdir}/libkioarchive6.so.*.*
 %ghost %{_libdir}/libkioarchive6.so.6
 %{_libdir}/qt6/plugins/kcm_trash.so
 %{_libdir}/qt6/plugins/kf6/kded/filenamesearchmodule.so
-%{_libdir}/qt6/plugins/kf6/kded/smbwatcher.so
+#%%{_libdir}/qt6/plugins/kf6/kded/smbwatcher.so
 %{_libdir}/qt6/plugins/kf6/kded/wpad-detector.so
 %dir %{_libdir}/qt6/plugins/kf6/kfileitemaction
 %{_libdir}/qt6/plugins/kf6/kfileitemaction/forgetfileitemaction.so
@@ -194,7 +195,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/plugins/kf6/kio/nfs.so
 %{_libdir}/qt6/plugins/kf6/kio/recentlyused.so
 %{_libdir}/qt6/plugins/kf6/kio/sftp.so
-%{_libdir}/qt6/plugins/kf6/kio/smb.so
+#%%{_libdir}/qt6/plugins/kf6/kio/smb.so
 %{_libdir}/qt6/plugins/kf6/kio/thumbnail.so
 %{_libdir}/qt6/plugins/kf6/kio/kio_filenamesearch.so
 %{_libdir}/qt6/plugins/kf6/kiod/kmtpd.so
@@ -228,11 +229,11 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/konqueror/dirtree
 %dir %{_datadir}/konqueror/dirtree/remote
 %{_datadir}/konqueror/dirtree/remote/mtp-network.desktop
-%{_datadir}/konqueror/dirtree/remote/smb-network.desktop
-%{_datadir}/mime/packages/org.kde.kio.smb.xml
+#%%{_datadir}/konqueror/dirtree/remote/smb-network.desktop
+#%%{_datadir}/mime/packages/org.kde.kio.smb.xml
 %{_datadir}/remoteview/afc-network.desktop
 %{_datadir}/remoteview/mtp-network.desktop
-%{_datadir}/remoteview/smb-network.desktop
+#%%{_datadir}/remoteview/smb-network.desktop
 %{_datadir}/solid/actions/solid_afc.desktop
 %{_datadir}/solid/actions/solid_mtp.desktop
 %{_datadir}/qlogging-categories6/kio-extras.categories
