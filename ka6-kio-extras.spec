@@ -11,12 +11,12 @@
 Summary:	Additional components to increase the functionality of KIO
 Summary(pl.UTF-8):	Dodatkowe komponenty rozszerzające funkcjonalność KIO
 Name:		ka6-%{kaname}
-Version:	26.04.0
-Release:	2
+Version:	26.04.1
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{ka_ver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	bb4e624f09b1c7fe67f1c5b88316b678
+# Source0-md5:	48cab927f6abf6083536f568fbe5c2e6
 URL:		https://kde.org/
 BuildRequires:	Imath-devel >= 3.1.12
 BuildRequires:	OpenEXR-devel >= 3.0.5
